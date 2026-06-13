@@ -11,7 +11,7 @@ const cors    = require('cors');
 
 const app = express();
 app.use(cors({
-  origin: ['https://cattlecare-pro.web.app/', 'https://cattlecare-pro.firebaseapp.com/', 'http://localhost:5173']
+  origin: ['https://cattlecare-pro.web.app', 'https://cattlecare-pro.firebaseapp.com', 'http://localhost:5173']
 }));
 app.use(express.json());
 
