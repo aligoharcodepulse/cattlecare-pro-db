@@ -72,12 +72,12 @@ cd cattlecare-pro
 
 ### Step 3 — Configure backend environment
 
-Inside the `backend/` folder, open `.env` and fill in your MySQL credentials:
+Inside the `backend/` folder, open `.env` and fill in our MySQL credentials:
 
 ```env
 DB_HOST=localhost
 DB_USER=root
-DB_PASSWORD=your_password_here
+DB_PASSWORD=password_here
 DB_NAME=cattlecare_pro
 PORT=5000
 ```
@@ -92,8 +92,8 @@ npm install
 ### Step 5 — Install frontend dependencies
 
 ```bash
-cd cattlecare-gui
 npm install
+npm install axios
 ```
 
 ---
@@ -118,7 +118,6 @@ node server.js
 ### Terminal 2 — Start the frontend
 
 ```bash
-cd cattlecare-gui
 npm run dev
 ```
 
@@ -189,42 +188,46 @@ Shows a live overview of the farm — total cattle, daily milk production, pendi
 
 ---
 
-## 📁 Code Structure
+📁 Code Structure
 
-```
-cattlecare-pro/
+cattlecare-pro/                     # Root folder — this is the React Vite app
 │
 ├── backend/                        # Express.js backend server
 │   ├── server.js                   # All API routes — calls stored procedures only
 │   ├── package.json                # Backend dependencies
 │   └── .env                        # MySQL credentials (never share this file)
 │
-├── cattlecare-gui/                 # React Vite frontend
-│   ├── index.html                  # Entry HTML — includes Google Fonts
-│   ├── vite.config.js              # Vite configuration
-│   ├── package.json                # Frontend dependencies
-│   │
-│   └── src/
-│       ├── main.jsx                # React entry point — mounts App
-│       ├── App.jsx                 # Main shell — sidebar + routing between pages
-│       ├── api.js                  # All axios API calls to backend (one place)
-│       ├── styles.css              # Global CSS — colors, layout, buttons, tables
-│       │
-│       ├── components/
-│       │   ├── Sidebar.jsx         # Left navigation menu
-│       │   └── UI.jsx              # Reusable components — Modal, Toast, Badge, Field
-│       │
-│       └── pages/
-│           ├── Dashboard.jsx       # Home screen with farm statistics
-│           ├── CattlePage.jsx      # Full CRUD for cattle records
-│           ├── CowsPage.jsx        # Milk production and lactation management
-│           ├── HealthPages.jsx     # Bulls, Breeding, Births, Deaths pages
-│           └── FinancePages.jsx    # Weight, Purchases, Sales, Profit/Loss pages
+├── DDL & DML/                      # SQL scripts
+│   ├── dbDDL.sql                   # Creates all 12 tables, triggers, stored procedures, views
+│   └── dbDML.sql                   # Inserts 15–20 sample rows per table
 │
-├── dbDDL.sql                       # Creates all 12 tables, triggers, stored procedures, views
-├── dbDML.sql                       # Inserts 15–20 sample rows per table
+├── public/                         # Static assets
+├── reports/                        # Project report documents
+├── images/                         # Screenshots and images
+│
+├── src/                            # All React source code
+│   ├── main.jsx                    # React entry point — mounts App
+│   ├── App.jsx                     # Main shell — sidebar + routing between pages
+│   ├── api.js                      # All axios API calls to backend (one place)
+│   ├── styles.css                  # Global CSS — colors, layout, buttons, tables
+│   │
+│   ├── components/
+│   │   ├── Sidebar.jsx             # Left navigation menu
+│   │   └── UI.jsx                  # Reusable components — Modal, Toast, Badge, Field
+│   │
+│   └── pages/
+│       ├── Dashboard.jsx           # Home screen with farm statistics
+│       ├── CattlePage.jsx          # Full CRUD for cattle records
+│       ├── CowsPage.jsx            # Milk production and lactation management
+│       ├── HealthPages.jsx         # Bulls, Breeding, Births, Deaths pages
+│       └── FinancePages.jsx        # Weight, Purchases, Sales, Profit/Loss pages
+│
+├── index.html                      # Entry HTML — includes Google Fonts link
+├── vite.config.js                  # Vite configuration
+├── package.json                    # Frontend dependencies (root level)
 └── README.md                       # This file
-```
+
+---
 
 ### Key Files Explained
 
@@ -252,30 +255,13 @@ cattlecare-pro/
 
 ---
 
-## 🤖 AI Disclosure
-
-This project used AI assistance (Claude by Anthropic) during development. Below are the prompts used:
-
-| # | Prompt Summary |
-|---|---|
-| 1 | Generate complete DDL script for CattleCare Pro based on ERD |
-| 2 | Generate complete DML script with 15+ rows per table, no hardcoded PKs |
-| 3 | Design a farm-friendly GUI in React with full CRUD for all tables |
-| 4 | Create Express backend connecting React to MySQL via stored procedures |
-| 5 | Fix input focus loss bug in React forms |
-| 6 | Write professional README file |
-
-All AI-generated code was reviewed, tested, and understood by the team before submission.
-
----
-
 ## 👥 Team
 
 | Name | Role |
 |---|---|
-| [Your Name] | Database implementation, GUI development |
-| [Teammate 2] | ERD to relational schema conversion |
-| [Teammate 3] | Normalization, report writing |
+| [Muhammad Ali] | DDL Implementation, GUI development |
+| [Aliya Ashraf] | ERD to relational schema conversion, Normalization |
+| [Muhammad Ahmad] | DML Implementation, report writing |
 
 ---
 
