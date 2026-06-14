@@ -186,10 +186,11 @@ Shows a live overview of the farm — total cattle, daily milk production, pendi
 - Auto-generated from sales — no manual entry needed
 - Shows net profit/loss per cattle and overall farm total
 
----
 
-📁 Code Structure
 
+## 📁 Code Structure
+
+```
 cattlecare-pro/                     # Root folder — this is the React Vite app
 │
 ├── backend/                        # Express.js backend server
@@ -226,8 +227,7 @@ cattlecare-pro/                     # Root folder — this is the React Vite app
 ├── vite.config.js                  # Vite configuration
 ├── package.json                    # Frontend dependencies (root level)
 └── README.md                       # This file
-
----
+```
 
 ### Key Files Explained
 
