@@ -259,9 +259,9 @@ cattlecare-pro/                     # Root folder — this is the React Vite app
 
 | Name | Role |
 |---|---|
-| [Muhammad Ali] | DDL Implementation, GUI development |
-| [Aliya Ashraf] | ERD to relational schema conversion, Normalization |
-| [Muhammad Ahmad] | DML Implementation, report writing |
+| Muhammad Ali | DDL Implementation, GUI development |
+| Aliya Ashraf | ERD to relational schema conversion, Normalization |
+| Muhammad Ahmad | DML Implementation, report writing |
 
 ---
 
